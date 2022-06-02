@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:4vw;
+}
+h1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 14vh;
+}
+button {
+    width: 14vw;
+    height: 8vh;
+    border-radius: 1vw;
+    border: none;
+    background-color: rgb(181, 194, 194);
+    font-family:'Roboto', sans-serif;
+    font-size: 4vh;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+button:hover {
+    transition: 0.2s ease-in-out;
+    background-color: rgb(2, 2, 2);
+    color: rgb(255, 251, 251);
+}
