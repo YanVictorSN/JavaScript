@@ -16,6 +16,14 @@ main {
     align-items: center;
     justify-content: center;
 }
+h1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 12vh;
+}
+h2 {
+    font-family:'Roboto', sans-serif;
+    font-size: 6vh;
+}
 img {
     width: 10vw;
     height: 10vw;
@@ -26,4 +34,8 @@ section {
     align-items: center;
     justify-content: center;
     padding: 2vw;
+}
+a {
+    font-family:'Roboto', sans-serif;
+    font-size:3vh;
 }
