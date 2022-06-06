@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height:100vh;
+    background-image: url("pngegg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 28%;
+    background-color: rgb(117, 106, 106);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#skull {
+    width: 10vw;
+    height: 22vh;
+}
+h1 {
+    font-size: 8vh;
+    font-family:'Roboto', sans-serif;
+}
+h2 {
+    font-family:'Roboto', sans-serif;
+    font-size: 4vh;
+    padding-right: 1.2vw;
+}
+h3 {
+    font-family:'Roboto', sans-serif;
+    font-size: 3.5vh;
+    padding-right: 0.3vw;
+}
+h4 {
+    font-family:'Roboto', sans-serif;
+    font-size: 3.5vh;
+    color: #ffffff;
+}
+div {
+    padding: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+input {
+    font-family:'Roboto', sans-serif;
+}
+label {
+    padding-right: 1vw;
+    font-family:'Roboto', sans-serif;
+    font-size: 3vh;
+}
+#bnt-calculate {
+    width: 10vw;
+    height: 8vh;
+    opacity: 0.8;
+    border-radius: 2vw;
+    border: none;
+    font-size: 3vh;
+    font-family:'Roboto', sans-serif;
+}
+#bnt-calculate:hover {
+    cursor: pointer;
+    background-color: rgb(104, 21, 21);
+    color: #ffffff;
+    transition: 1s ease-in-out;
+}
