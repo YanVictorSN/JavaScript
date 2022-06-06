@@ -31,11 +31,11 @@ calculate.addEventListener ("click",function (e) {
     let daysleftfordeath = 0;
 
     if (gender === "masculino") {
-            daysleftfordeath = Math.floor((71.1 - ageYear));
+            daysleftfordeath = Math.floor((71.1 - ageYear)* 365);
         result.innerHTML = `Faltam ${daysleftfordeath} dias para sua morte`;
 
     } else if (gender === "feminino") {
-            daysleftfordeath = Math.floor((80.1 - ageYear));
+            daysleftfordeath = Math.floor((80.1 - ageYear)* 365);
         result.innerHTML = `Faltam ${daysleftfordeath} dias para sua morte`;
     }
 
