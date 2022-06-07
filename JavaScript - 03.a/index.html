@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Calculadora</title>
+</head>
+<body>
+    <main>
+        <fieldset>
+            <h1>CALCULADORA</h1>
+            <input id="numberOne" type="number">
+            <img src="assets/plus.png" alt="soma">
+            <input id="numberTwo" type="number" value="">
+            <select id="select">
+                <option id="sum" value="sum">Somar</option>
+                <option id="subtract" value="subtract">Subtrair</option>
+                <option id="division" value="division">Dividir</option>
+                <option id="multiply" value="multiply">Multiplicar</option>
+            </select>
+            <button id="submit" type="submit">Calcular</button>
+            <h2 id="result">Resultado:</h2>
+        </fieldset>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
