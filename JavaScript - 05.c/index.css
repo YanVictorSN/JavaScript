@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1 {
+    font-family:'Roboto', sans-serif;
+    font-size: 6vh;
+}
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:1vw;
+}
+img {
+    width: 22vw;
+    height: 45vh;
+}
+button {
+    width: 8vw;
+    height: 5vh;
+    border-radius: 1vw;
+    border: none;
+    background-color: rgb(185, 37, 99);
+    color: #ffffff;
+    font-family:'Roboto', sans-serif;
+    font-size: 3vh;
+    transition: 0.8s ease-in-out;
+}
+button:hover {
+    cursor: pointer;
+    transition: 0.8s ease-in-out;
+    transform: scale(1.1);
+}
