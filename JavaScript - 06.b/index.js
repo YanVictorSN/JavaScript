@@ -10,9 +10,10 @@ function activeBomb() {
     bombImg.setAttribute("src", "assets/bomb1.png");
     mensage.textContent = "Clique na bomba para desarmá-la."; 
     timeExplosion = setTimeout(explosion, 5000);
-    console.log(timeExplosion)
 
-    bombImg.addEventListener ("click", deactivateBomb)
+}
+
+bombImg.addEventListener ("click", deactivateBomb)
 
 function deactivateBomb() {
     clearTimeout(timeExplosion);
@@ -20,8 +21,6 @@ function deactivateBomb() {
     mensage.textContent = "Desarmada";  
 
 } 
-
-}
 
 function explosion() {
     bombImg.setAttribute("src", "assets/explosao-nuclear.png");

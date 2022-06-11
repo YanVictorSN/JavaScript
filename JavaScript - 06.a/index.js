@@ -21,7 +21,6 @@ function deactivateBomb() {
     mensage.textContent =  `Tempo restante:${time}`;
 } 
 
-
 function timeDecreasing() {
     if (--time > 0) {
         mensage.textContent =  `Tempo restante:${time}`;
