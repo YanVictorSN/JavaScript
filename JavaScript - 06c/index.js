@@ -5,6 +5,8 @@ let mensage = document.getElementById("time-left");
 
 let alarmSound = new Audio ("assets/198841__bone666138__analog-alarm-clock.wav")
 
+let minutesTime = 0;
+let secondsTime = 0;
 
 button.addEventListener ("click", count);
 
@@ -15,15 +17,9 @@ function count() {
     seconds = document.getElementById("seconds").selectedIndex;
     button.addEventListener ("click", desarmAlarm);
     button.textContent = "Desativar Alarme";
-    button.removeEventListener ("click", count);
     console.log(seconds)
 }
 
-function desarmAlarm() {
-    clearInterval(minutes);
-    clearInterval(seconds);
-    mensage.textContent = `Tempo restante: ${minutes}:${seconds} `;
-}
 
 function countMinutes() {
     mensage.textContent = `Tempo restante: ${minutes}:${seconds} `
@@ -43,4 +39,10 @@ function countSeconds() {
        clearInterval(minutes);
        clearInterval(seconds);
     }
+}
+function desarmAlarm() {
+    button.removeEventListener ("click", count);
+    mensage.textContent = `Tempo restante: ${minutes}:${seconds} `;
+    clearInterval(minutes);
+    clearInterval(seconds);
 }
