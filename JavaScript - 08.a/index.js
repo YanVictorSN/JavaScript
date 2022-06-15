@@ -22,7 +22,8 @@ function creatObject() {
     // const currentDateFormated = `${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`
     const birthDate = new Date(inputDate);
     
-    
+    let validate = 0;
+
     let user = {
         name: String(nameInput.value),
         birthDate: inputDate,
@@ -33,6 +34,7 @@ function creatObject() {
     }
    
     try {
+        validate = 1;
         if (user.name == "" || user.name.length < 5) throw "Field “name” is invalid!";
         if (birthDate > currentDate) throw "Field “date” is invalid!"
         if(user.weight== "" || isNaN(user.weight) == true) throw "Field “weight” is invalid!";
@@ -41,13 +43,16 @@ function creatObject() {
     } catch (err) {
         alert (err)
         result.textContent = (err);
-    } finally {
-            nameResult.textContent = `Name: ${user.name}`;
-            dateResult.textContent = `BirthDate: ${user.birthDate}`;
-            weightResult.textContent = `Weight: ${user.weight}`;
-            heightResult.textContent = `Heighta: ${user.height}`;
-            genderResult.textContent = `Gender: ${user.gender}`;
-            jsonResult.textContent = `${JSON.stringify(user)}`
-            console.log(user);
-        }
+        validate = 0;
+    } 
+    
+    if(validate === 1){
+        nameResult.textContent = `Name: ${user.name}`;
+        dateResult.textContent = `BirthDate: ${user.birthDate}`;
+        weightResult.textContent = `Weight: ${user.weight}`;
+        heightResult.textContent = `Heighta: ${user.height}`;
+        genderResult.textContent = `Gender: ${user.gender}`;
+        jsonResult.textContent = `${JSON.stringify(user)}`
+        console.log(user);
+    } 
 }
