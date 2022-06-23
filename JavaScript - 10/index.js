@@ -5,7 +5,6 @@ let tableBody = document.getElementById("tableBody");
 let array = [];
 let validator = null;
 
-
 buttonInclude.addEventListener("click", addNewObject)
 let idProduct = 0;
 
@@ -29,7 +28,6 @@ function addNewObject() {
        if(description.value == "") throw "Falha no cadastro do produto! Insira uma descrição válida"
        if(productValue.value == 0 || isNaN(productValue.value) == true) throw "Falha no cadastro do produto! Insira um valor válido"
        if(validator == null) {
-        // if (product.value == "" || description.value == "" || productValue.value == 0 || isNaN(productValue.value) == true) {
         array.push(produtos);
         idProduct++;
         result.textContent = `Produto ${produtos.nome} incluído com sucesso!`;
@@ -45,45 +43,42 @@ function addNewObject() {
     } catch (err) {
         alert (err)
     }
-  
-    
 }
 
 buttonList.addEventListener("click",createTable)
-let i = 0; 
+
 function createTable() {
-  
-        while (i < array.length) {
 
-            let tr = tableBody.insertRow();
+    tableBody.innerHTML = "";
+    let i = 0; 
+    while (i < array.length) {
 
-            let tableId = tr.insertCell();
-            let tableName = tr.insertCell();
-            let tableValor = tr.insertCell();
-            let iconEditTable = tr.insertCell();
-            let iconEditEraser = tr.insertCell();
-            
-            let tableIdHtml = document.createTextNode(array[i].id);
-            let tableNameHtml = document.createTextNode(array[i].nome);
-            let tableValorHtml = document.createTextNode(array[i].valor);
-            
-            let iconEdit = document.createElement("img");
-            iconEdit.setAttribute("src","imgs/editar.png");
-            iconEdit.setAttribute("onclick","edit("+ JSON.stringify(array[i])+")");
-
-            let iconEraser = document.createElement("img");
-            iconEraser.setAttribute("src","imgs/botao-de-deletar.png");
-            iconEraser.setAttribute("onclick", "eraser("+ array[i].id +")")
-
-         
-            tableId.appendChild(tableIdHtml);
-            tableName .appendChild(tableNameHtml);
-            tableValor.appendChild(tableValorHtml);
-            iconEditTable.appendChild(iconEdit);
-            iconEditEraser.appendChild(iconEraser);
-            i++;
+        let tr = tableBody.insertRow();
         
-            }    
+        let tableId = tr.insertCell();
+        let tableName = tr.insertCell();
+        let tableValor = tr.insertCell();
+
+        tableId.innerHTML = array[i].id;
+        tableName.innerHTML = array[i].nome;
+        tableValor.innerHTML = array[i].valor;
+
+        let iconEditTable = tr.insertCell();
+        let iconEditEraser = tr.insertCell();
+        
+        let iconEdit = document.createElement("img");
+        iconEdit.setAttribute("src","imgs/editar.png");
+        iconEdit.setAttribute("onclick","edit("+ JSON.stringify(array[i])+")");
+
+        let iconEraser = document.createElement("img");
+        iconEraser.setAttribute("src","imgs/botao-de-deletar.png");
+        iconEraser.setAttribute("onclick", "eraser("+ array[i].id +")")
+
+   
+        iconEditTable.appendChild(iconEdit);
+        iconEditEraser.appendChild(iconEraser);
+        i++;
+        }       
 }
 
 function edit (id) {  
@@ -92,7 +87,6 @@ function edit (id) {
     document.getElementById("value").value = id.valor;
     document.getElementById("include").innerHTML = "Editar";
     validator = id.id;
-
 }
 
 function atualizar(id) {
@@ -100,18 +94,16 @@ function atualizar(id) {
 
     while (z < array.length ) {
          if(array[z].id == id) {
-            array[z].nome =  document.getElementById("product").value;
-            array[z].descricao = document.getElementById("description").value;
-            array[z].value = document.getElementById("value").value;
-            console.log(array[z].nome);
-            console.log(array);
-            console.log("Entrou 2")
+            array[id].nome =  document.getElementById("product").value; 
+            array[id].descricao = document.getElementById("description").value;
+            array[id].valor = document.getElementById("value").value;
          }
          z++
     }
     validator = null;
-}
+    createTable()
 
+}
 
 function eraser(id) {
     let x = 0; 
@@ -119,14 +111,11 @@ function eraser(id) {
 
     while (x < array.length) { 
         if (array[x].id == id) {
-            tableBody.deleteRow(x);
-        i--;                
+            tableBody.deleteRow(x);                
         } else {
-            newArray.push(array[x])
-            
+            newArray.push(array[x]);
         }
         x++;
-        u.log(array, newArray)  
 }
-            array = newArray;
+    array = newArray;
 }
