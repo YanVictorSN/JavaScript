@@ -16,9 +16,9 @@ function Subtracion(numb1,numb2) {
         return Subtracion(Sum(numb1,(~numb2) + 1))
 }
 }
- 
-console.log(Sum(100,50))
-console.log(Subtracion(100,50))
+ //testa sum dentro da sum
+console.log(Sum(30,50))
+console.log(Subtracion(80,100))
 
 
 
