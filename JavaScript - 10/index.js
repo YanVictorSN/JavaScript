@@ -5,7 +5,8 @@ let tableBody = document.getElementById("tableBody");
 let array = [];
 let validator = null;
 
-buttonInclude.addEventListener("click", addNewObject)
+buttonInclude.addEventListener("click", addNewObject);
+
 let idProduct = 0;
 
 function addNewObject() {
@@ -28,6 +29,7 @@ function addNewObject() {
        if(description.value == "") throw "Falha no cadastro do produto! Insira uma descrição válida"
        if(productValue.value == 0 || isNaN(productValue.value) == true) throw "Falha no cadastro do produto! Insira um valor válido"
        if(validator == null) {
+        // if (product.value == "" || description.value == "" || productValue.value == 0 || isNaN(productValue.value) == true) {
         array.push(produtos);
         idProduct++;
         result.textContent = `Produto ${produtos.nome} incluído com sucesso!`;
@@ -68,11 +70,11 @@ function createTable() {
         
         let iconEdit = document.createElement("img");
         iconEdit.setAttribute("src","imgs/editar.png");
-        iconEdit.setAttribute("onclick","edit("+ JSON.stringify(array[i])+")");
+        iconEdit.setAttribute("onclick",`edit(${JSON.stringify(array[i])})`);
 
         let iconEraser = document.createElement("img");
         iconEraser.setAttribute("src","imgs/botao-de-deletar.png");
-        iconEraser.setAttribute("onclick", "eraser("+ array[i].id +")")
+        iconEraser.setAttribute("onclick", `eraser(${array[i].id})`)
 
    
         iconEditTable.appendChild(iconEdit);
@@ -93,11 +95,11 @@ function atualizar(id) {
     let z = 0;
 
     while (z < array.length ) {
-         if(array[z].id == id) {
+        if(array[z].id == id) {
             array[id].nome =  document.getElementById("product").value; 
             array[id].descricao = document.getElementById("description").value;
             array[id].valor = document.getElementById("value").value;
-         }
+        }
          z++
     }
     validator = null;

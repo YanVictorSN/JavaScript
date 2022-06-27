@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>CRUD</title>
+</head>
+<body>
+    <header>
+        <h1>CRUD - ALPHA EDTECH</h1>
+    </header>
+    <div>
+        <label for="">Produto:</label>
+        <input id="product" type="text">
+        <label>Descrição:</label>
+        <input id="description" type="text">
+        <label>Valor:</label>
+        <input id="value" type="text">
+    </div>
+    <div>
+        <p id="result"></p>
+    </div>
+    <div>
+        <button id="include" type="button">Incluir Produtos</button>
+        <button id="list" type="button">Listar Produtos</button>
+    </div>
+    <input id='search' type="text" placeholder="Buscar produtos">
+    <button id='searchButton'>Buscar</button>
+    <div>
+        <p id="resultSearch"></p>
+    </div>
+    <table id="tabela">
+        <tr>
+            <th>ID</th>
+            <th id="productSort">Produto</th>
+            <th id="valueSort">Valor</th>
+            <th>Editar</th>
+            <th>Apagar</th>
+        </tr>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+    <section id="modalDescription">
+            <h3>Especificações</h3>  
+            <img id='exitImg'src="imgs/botao-x.png" alt="" srcset="">
+        <div  id="modalInfo">
+            <p id="productModal">Produto:</p>
+            <p id="descriptionModal">Descrição:</p>
+            <p id='valueModal'>Valor:</p>
+            <p id="timeModal" >Incluido em:</p>
+        </div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
