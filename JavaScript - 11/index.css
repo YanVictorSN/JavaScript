@@ -7,14 +7,26 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
-     justify-content: center;
+    justify-content: center;
     align-items: center; 
-    flex-direction: column;
     gap: 1vw;
     position: absolute;
 }
+main {
+    width: 60vw;
+    gap:2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vw;
+}
 h1 {
     font-family:'Roboto', sans-serif;
+    font-size: 7vh;
+}
+#styleInclude {
+    display: flex;
+    flex-direction: column;
 }
  tbody,tr,th{
     border:1px solid black;
@@ -22,11 +34,17 @@ h1 {
     border-radius: 0.3vw;
     font-family:'Roboto', sans-serif;
 } 
+td {
+    border:1px solid black;
+    padding: 0.3vw;
+    border-radius: 0.3vw;
+    font-family:'Roboto', sans-serif;
+}
 #modalDescription {
     position: fixed;
     width:20vw;
     height: 20vw;
-    padding: 2vw;
+    padding: 1vw;
     background-color: rgb(95, 95, 114);
     display: flex;
     align-items: center;
@@ -37,16 +55,21 @@ h1 {
     z-index: 1;
     font-family:'Roboto', sans-serif;
 }
-
+#styleTable{
+    position:fixed;
+    top: 14vw;
+    right: 10vw;
+}
 #modalInfo{
     width:20vw;
     height: 20vw;
     padding: 3vw;
     display: flex;
-    gap:1vw;
+    gap:0.5vw;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    color: #e9e3e3;
 }
 #exitImg {
     width: 2vw;
@@ -54,7 +77,7 @@ h1 {
 }
 section img {
     position: fixed;
-    top: 13.9vw;
+    top:14vw;
     left: 57.5vw;
 }
 button {

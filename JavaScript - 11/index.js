@@ -47,9 +47,10 @@ function addNewObject() {
     }
 
     try {
-       if(product.value == "") throw "Falha no cadastro do produto! Insira um nome válido"
+       if(product.value == "") throw "Falha no cadastro do produto! Insira um nome válido."
        if(description.value == "") throw "Falha no cadastro do produto! Insira uma descrição válida!"
-       if(productValue.value == 0 || isNaN(productValue.value) == true) throw "Falha no cadastro do produto! Insira um valor válido"
+       if(productValue.value == 0 || isNaN(productValue.value) == true) throw "Falha no cadastro do produto! Insira um valor válido."
+       if(productValue.value < 0) throw "Falha no cadastro do produto! Insira um valor válido"
        if(validator == null) {
         array.push(produtos);
         idProduct++;
@@ -109,7 +110,7 @@ function createTable() {
 
         let iconEraser = document.createElement("img");
         iconEraser.setAttribute("src","imgs/botao-de-deletar.png");
-        iconEdit.style.cursor = 'pointer';
+        iconEraser.style.cursor = 'pointer';
         iconEraser.setAttribute("onclick", `eraser(${array[i].id})`)
 
         iconEditTable.appendChild(iconEdit);
@@ -235,8 +236,7 @@ function searchFilter() {
                 return true
             } else {
                 return false
-            }
-            
+            }    
         })
         if (countProducts == 0) {
             resultSearch.innerHTML = `Não foram encontrados produtos conforme chave de pesquisa!`
@@ -256,3 +256,4 @@ function clearresultSearch() {
 function clearresultInclude() {
     result.textContent = '';
 }
+
