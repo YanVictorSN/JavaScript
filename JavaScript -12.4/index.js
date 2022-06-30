@@ -15,7 +15,6 @@ const cardShuffle = [];
 
 let valueCards = [];
 
-
 //Cria deck de cartas;
 
 const allCards = [];
@@ -91,7 +90,6 @@ function fullhouse() {
             }
         }
     }
-
     for(x = 0; x < 5; x++){
         for(z = x + 1; z < 5; z++) {
             if (valueCards[x].value == valueCards[z].value) {
@@ -99,8 +97,12 @@ function fullhouse() {
             }
         }
     }
-
+    if (countfull + count == 2) {
+        result.innerHTML = `Full House!`
+    
 }
+}
+
 function sequencia() {
     let countSequência = 0;
     valueCards.sort(function(a, b){return a.value-b.value});
@@ -116,7 +118,6 @@ function sequencia() {
     }
 }
 
-
 buttonShuffle.addEventListener ('click', shuffleCards);
 
 //Embaralha jogo de cartas:
@@ -127,6 +128,7 @@ function shuffleCards() {
     result.innerHTML = '';
     valueCards = [];
     const allCardsCopy = [...allCards]
+
     for (y = 0; y < allCardsCopy.length; y++) {
         let shuffleCard = allCardsCopy[y];
         let random = Math.floor(Math.random() * allCardsCopy.length);
